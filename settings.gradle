@@ -6,5 +6,9 @@
  * Detailed information about configuring a multi-project build in Gradle can be found
  * in the user manual at https://docs.gradle.org/6.8/userguide/multi_project_builds.html
  */
-
+//分层布局的多项目构建settings.gradle文件
 rootProject.name = 'springboot-gradle'
+//include 'project1', 'project2:child', 'project3:child1'
+include ':springboot-elasticsearch','springboot-mongodb'
+//平面布局的多项目构建settings.gradle文件
+//includeFlat 'project3', 'project4'

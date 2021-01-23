@@ -8,6 +8,7 @@ group = 'com.xmxe'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+// 为当前项目提供仓库和依赖包
 repositories {
 	mavenLocal()
 	maven {
@@ -26,3 +27,16 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+/**
+ * buildScript块的repositories主要是为了Gradle脚本自身的执行，获取脚本依赖插件
+ */
+/*buildscript {
+	repositories {
+
+	}
+	dependencies {
+
+	}
+
+}*/
