@@ -8,6 +8,12 @@ group = 'com.xmxe'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+//apply作用：包含配置插件、引用其他配置文件 Tips：该配置项位置应放在除buildscript、plugins配置之外的所有配置项的前面，没有plugins则保证在buildscript之后
+//配置插件
+//apply plugin: 'io.spring.dependency-management'
+//引用配置文件
+//apply from: 'config.gradle'
+
 repositories {
 	mavenLocal()
 	maven {
@@ -20,7 +26,18 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+
+		// 排除所有子依赖中的support依赖
+		//   configurations {
+		//      all*.exclude group: 'org.junit.vintage'
+		//   }
+		// 依赖同于没有使用 exclude 排除依赖 ，每个包的依赖项都会被递归分析并添加进来。
+		// transitive = true
+		// 则依赖关系同于用 exclude 排除依赖。
+		// transitive = false
+
 	}
+
 }
 
 test {

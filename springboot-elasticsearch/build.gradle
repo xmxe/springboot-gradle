@@ -1,3 +1,16 @@
+/*
+ * buildScript块的repositories主要是为了Gradle脚本自身的执行，获取脚本依赖插件
+ * 放在最上方
+ */
+/*buildscript {
+	repositories {
+
+	}
+	dependencies {
+
+	}
+
+}*/
 plugins {
 	id 'org.springframework.boot' version '2.3.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -8,7 +21,9 @@ group = 'com.xmxe'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-// 为当前项目提供仓库和依赖包
+/*
+ * 为当前项目提供仓库和依赖包
+ */
 repositories {
 	mavenLocal()
 	maven {
@@ -28,15 +43,4 @@ test {
 	useJUnitPlatform()
 }
 
-/**
- * buildScript块的repositories主要是为了Gradle脚本自身的执行，获取脚本依赖插件
- */
-/*buildscript {
-	repositories {
 
-	}
-	dependencies {
-
-	}
-
-}*/
