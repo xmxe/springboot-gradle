@@ -6,9 +6,47 @@
  * Detailed information about configuring a multi-project build in Gradle can be found
  * in the user manual at https://docs.gradle.org/6.8/userguide/multi_project_builds.html
  */
-//分层布局的多项目构建settings.gradle文件
+
+/*
+ * 作用：插件库管理
+ * Tips：放在配置文件最前端
+ */
+pluginManagement {
+    repositories {
+        //这个就是默认的插件库，一般可不配置，除非有更好更快的插件库
+        gradlePluginPortal()
+    }
+}
+
 rootProject.name = 'springboot-gradle'
 //include 'project1', 'project2:child', 'project3:child1'
 include ':springboot-elasticsearch','springboot-mongodb'
 //平面布局的多项目构建settings.gradle文件
 //includeFlat 'project3', 'project4'
+
+/*
+ * 创建自定义方法
+ */
+def customInit(){
+    println"start init"
+    //做自己想要做的初始化
+    println"end init"
+}
+//settings.gradle加载的时候，会执行这个方法
+customInit()
+
+/*
+ * projectsLoaded(非必需)
+ * 作用：所有项目载入完成回调函数
+ */
+gradle.projectsLoaded {
+    Gradle gradle ->
+        println "子项目初始化完成"+gradle
+}
+/*
+ * settingsEvaluated(非必需)
+ * 作用：settings.gradle初始化完成的回调函数，用于做些初始化工作
+ */
+gradle.settingsEvaluated {
+    println "settings初始化完成"
+}
