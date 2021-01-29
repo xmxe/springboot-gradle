@@ -21,3 +21,11 @@ allprojects {
 
     }
 }
+task helloworld{
+    doFirst {
+        println('doFirst')
+    }
+    doLast {
+        println('doLast')
+    }
+}
