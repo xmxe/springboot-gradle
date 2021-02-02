@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>index</title>
 </head>
 <body>
-this is index page!
+    <span>来自void方法@ModelAttribute 请求参数a=</span><p th:text="${a}"></p>
+    <span>来自有返回值的@ModelAttribute</span>
+    <table>
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>用户名</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="mes,stat:${messages}" th:class="${stat.odd}?'odd':'even'">
+            <td th:text="${mes}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <span>@ModelAttribute和@RequestMapping一同使用:</span><p th:text="${attributeName}"></p>
+
 </body>
 </html>
