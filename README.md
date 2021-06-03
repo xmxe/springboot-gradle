@@ -115,3 +115,11 @@ JCenter():就可以使用JCenJCenter上托管的开源项目；
 
 参考：[Gradle-Wrapper详解](https://blog.csdn.net/niuba123456/article/details/81074340)
 
+------
+
+| springboot-gradle | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute |
+| ----------------- | ------------------------------------------------------------ |
+|                   |                                                              |
+|                   |                                                              |
+|                   |                                                              |
+
