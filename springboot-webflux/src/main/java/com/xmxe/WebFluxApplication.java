@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ElasticSearchApplication {
+public class WebFluxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ElasticSearchApplication.class, args);
+		SpringApplication.run(WebFluxApplication.class, args);
 	}
 
 }
