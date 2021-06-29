@@ -144,7 +144,7 @@ public class ExampleController {
 	 * public ModelAndView index(String a) { return new ModelAndView("index");}
 	 */
 	@ModelAttribute
-	public void method_void(@RequestParam("a") String a, Model model){
+	public void method_void(@RequestParam(value = "a",required = false) String a, Model model){
 		model.addAttribute("a",a);
 	}
 
