@@ -47,27 +47,25 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
 		String username = null;
 		String jwtToken = null;
-		// JWT Token is in the form "Bearer token". Remove Bearer word and get only the Token
-		// 根据token获取用户名
+		// 根据token获取用户名 删除token中的Bearer 来获取真正的token
 		if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
 			jwtToken = requestTokenHeader.substring(7);
 			try {
 				username = jwtTokenUtil.getUsernameFromToken(jwtToken);
 			} catch (IllegalArgumentException e) {
-				System.out.println("Unable to get JWT Token");
+				System.out.println("Unable to get JWT Token--无法获取token");
 			} catch (ExpiredJwtException e) {
-				System.out.println("JWT Token has expired");
+				System.out.println("JWT Token has expired -- token过期");
 			}
 		} else {
-			logger.warn("JWT Token does not begin with Bearer String");
+			logger.warn("JWT Token does not begin with Bearer String --- token不是以Bearer开头");
 		}
 
-		//Once we get the token validate it.
+		//得到token后校验
 		if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-
+			// 获取用户名密码等信息
 			UserDetails userDetails = this.jwtUserDetailsService.loadUserByUsername(username);
 
-			// if token is valid configure Spring Security to manually set authentication
 			// 如果令牌有效，请配置 Spring Security 以手动设置身份验证
 			if (jwtTokenUtil.validateToken(jwtToken, userDetails)) {
 
@@ -75,8 +73,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 						userDetails, null, userDetails.getAuthorities());
 				usernamePasswordAuthenticationToken
 						.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-				// After setting the Authentication in the context, we specify
-				// that the current user is authenticated. So it passes the Spring Security Configurations successfully.
 				// 在上下文中设置 Authentication 后，我们指定当前用户已通过身份验证。所以它成功地通过了 Spring Security 配置。
 				SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 			}

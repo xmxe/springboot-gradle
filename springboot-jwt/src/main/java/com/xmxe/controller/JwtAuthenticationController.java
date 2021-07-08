@@ -41,6 +41,8 @@ public class JwtAuthenticationController {
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
 			throws Exception {
 
+		// 因为在spring security中配置了/authenticate接口为不需要登录即可访问 但是生成token需要确定用户名密码正确才可以生成 所以加此方法校验用户
+		// 正常来讲应该在spring security配置/authenticate接口为登陆后或者指定角色访问 那么就不用写此方法 spring security会自动校验登录
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
 		final UserDetails userDetails = jwtInMemoryUserDetailsService

@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)//开启基于方法的认证 只有添加此注解 才能在方法上使用类似于@PreAuthorize("hasRole(‘admin‘)")来控制权限
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	// 用来解决匿名用户访问无权限资源时的异常
@@ -52,18 +52,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
-				// dont authenticate this particular request
-				.authorizeRequests().antMatchers("/authenticate").permitAll().
-				// all other requests need to be authenticated
-				anyRequest().authenticated().and().
-				// make sure we use stateless session; session won't be used to
-				// store user's state.
-				exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+				.authorizeRequests().antMatchers("/authenticate").permitAll().anyRequest().authenticated()
+				.and()
+				.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)// 配置认证失败时的调用
+				.and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);// session创建策略 这里指定永远不会创建session
 
-		// Add a filter to validate the tokens with every request
 		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 }
