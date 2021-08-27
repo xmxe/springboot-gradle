@@ -14,12 +14,7 @@ public class CustomInterceptor implements HandlerInterceptor {
 	Logger logger = LoggerFactory.getLogger(CustomInterceptor.class);
 
 	/**
-	 * 使用拦截器获取Controller方法名和注解信息?
-	 * @param request
-	 * @param response
-	 * @param handler
-	 * @return
-	 * @throws Exception
+	 * 使用拦截器获取Controller方法名和注解信息
 	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)

@@ -20,7 +20,9 @@ pluginManagement {
 
 rootProject.name = 'springboot-gradle'
 //include 'project1', 'project2:child', 'project3:child1'
-include ':springboot-webflux','springboot-mongodb','springboot-example','springboot-qrlogin','springboot-jwt','springboot-interceptor'
+include ':springboot-webflux','springboot-mongodb',
+        'springboot-example','springboot-qrlogin',
+        'springboot-jwt','springboot-interceptor'
 //平面布局的多项目构建settings.gradle文件
 //includeFlat 'project3', 'project4'
 

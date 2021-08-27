@@ -25,19 +25,6 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-
-		// 排除所有子依赖中的support依赖
-		//   configurations {
-		//      all*.exclude group: 'org.junit.vintage'
-		//   }
-		// 依赖同于没有使用 exclude 排除依赖 ，每个包的依赖项都会被递归分析并添加进来。
-		// transitive = true
-		// 则依赖关系同于用 exclude 排除依赖。
-		// transitive = false
-
-	}
 
 }
 

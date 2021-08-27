@@ -39,9 +39,6 @@ dependencies {
 	implementation 'dev.miku:r2dbc-mysql'
 	implementation 'mysql:mysql-connector-java'
 
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
 }
 
 test {
