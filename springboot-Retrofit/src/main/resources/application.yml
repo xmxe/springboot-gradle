@@ -1,0 +1,49 @@
+retrofit:
+  # 连接池配置
+  pool:
+    test1:
+      max-idle-connections: 3
+      keep-alive-second: 100
+    test2:
+      max-idle-connections: 5
+      keep-alive-second: 50
+  # 禁用void返回值类型
+  disable-void-return-type: false
+  # 全局转换器工厂
+  global-converter-factories:
+    - retrofit2.converter.jackson.JacksonConverterFactory
+    #Gson: com.squareup.Retrofit:converter-gson
+    #Jackson: com.squareup.Retrofit:converter-jackson
+    #Moshi: com.squareup.Retrofit:converter-moshi
+    #Protobuf: com.squareup.Retrofit:converter-protobuf
+    #Wire: com.squareup.Retrofit:converter-wire
+    #Simple XML: com.squareup.Retrofit:converter-simplexml
+    #JAXB: com.squareup.retrofit2:converter-jaxb
+  # 全局调用适配器工厂
+  global-call-adapter-factories:
+    - com.github.lianjiatech.retrofit.spring.boot.core.BodyCallAdapterFactory
+    - com.github.lianjiatech.retrofit.spring.boot.core.ResponseCallAdapterFactory
+  # 是否启用熔断降级
+  degrade:
+    enable: true
+    # 熔断降级实现方式
+    degrade-type: sentinel
+    # 熔断资源名称解析器
+    resource-name-parser: com.github.lianjiatech.retrofit.spring.boot.degrade.DefaultResourceNameParser
+  # 启用日志打印
+  log:
+    enable: true
+    # 日志打印拦截器
+    logging-interceptor: com.github.lianjiatech.retrofit.spring.boot.interceptor.DefaultLoggingInterceptor
+  retry:
+    # 请求重试拦截器
+    retry-interceptor: com.github.lianjiatech.retrofit.spring.boot.retry.DefaultRetryInterceptor
+    # 启用全局重试
+    enable-global-retry: true
+
+http:
+  baseUrl: 127.0.0.1:8080
+  # 密钥id
+  accessKeyId: w
+  # 密钥
+  accessKeySecret: e
