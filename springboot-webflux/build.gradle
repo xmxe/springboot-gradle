@@ -11,15 +11,11 @@
 	}
 
 }*/
-plugins {
-	id 'org.springframework.boot' version '2.3.0.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
-}
+
 
 group = 'com.xmxe'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = javaVersion
 
 /*
  * 为当前项目提供仓库和依赖包
@@ -31,7 +27,12 @@ repositories {
 	}
 	mavenCentral()
 }
-
+/*
+ * 排除弗父依赖中的spring-boot-starter-web 因为webflux与web冲突
+ */
+configurations {
+	all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
+}
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.springframework.boot:spring-boot-starter-security'

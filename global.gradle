@@ -1,0 +1,9 @@
+// 用来存放应用中的所有配置变量，统一管理，而不再是每个moudle里都自己写一份，修改起来更加的方便
+ext {
+    //定义一个变量，统一规定springboot的版本
+    springBootVersion = '2.3.0.RELEASE'
+    springCloudVersion = 'Hoxton.RELEASE'
+    springCloudAlibabaVersion = '2.2.0.RELEASE'
+    javaVersion = '11'
+    encoding='UTF-8'
+}

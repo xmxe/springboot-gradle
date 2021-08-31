@@ -11,15 +11,10 @@
 	}
 
 }*/
-plugins {
-	id 'org.springframework.boot' version '2.3.0.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
-}
 
 group = 'com.xmxe'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = javaVersion
 
 /*
  * 为当前项目提供仓库和依赖包
@@ -33,7 +28,6 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 //	compileOnly 'org.springframework.boot:spring-boot-devtools'
 }

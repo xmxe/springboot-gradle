@@ -5,22 +5,99 @@
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/6.8/samples
  */
 
+
+
+// 引入'global.gradle文件
+apply from: this.file('global.gradle')
+
+group = 'com.xmxe'
+version = '0.0.1-SNAPSHOT'
+
+/*
+ * buildscript{}块是为Gradle本身配置存储库和依赖项的地方——这意味着，这里不应该包含模块的依赖项。
+ * buildscript中的声明是gradle脚本自身需要使用的资源
+ */
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+        jcenter()
+    }
+
+    // 这里的指的是gradle本身的依赖，并不是项目的依赖，例如想用gradle读取csv，那么就在这里引入gradle度的去csv的依赖库
+    dependencies {//用来打包
+        classpath 'org.apache.commons:commons-csv:1.8'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.3.0.RELEASE'
+    }
+}
+
+import org.apache.commons.csv.*
+
+task printCSV() {
+    doLast {
+        def records = CSVFormat.EXCEL.parse(new FileReader('config/sample.csv'))
+        for (item in records) {
+            print item.get(0) + ' '
+            println item.get(1)
+        }
+
+    }
+}
+
+
+//allprojects是对所有project的配置，包括Root Project。而subprojects是对所有Child Project的配置
+
 /*
  * allprojects块的repositories用于多项目构建，
  * 为所有项目提供共同所需依赖包。而子项目可以配置自己的repositories以获取自己独需的依赖包。
  */
 allprojects {
+
     repositories {
         mavenLocal()
-        maven {
-            url 'http://maven.aliyun.com/nexus/content/groups/public/'
-        }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         mavenCentral()
     }
-    dependencies {
 
+    //指定编码格式
+    tasks.withType(JavaCompile) {
+        options.encoding = encoding
     }
 }
+
+/*
+ * 子项目可以配置自己的repositories以获取自己独需的依赖包。
+ */
+subprojects {
+
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java'
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+
+    dependencies {
+        implementation ('org.springframework.boot:spring-boot-starter-web') {exclude module: 'springboot-webflux'}
+        implementation 'org.springframework.cloud:spring-cloud-starter'
+        compileOnly 'org.projectlombok:lombok:1.18.20'
+        annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+}
+// 测试
 task helloworld{
     doFirst {
         println('doFirst')

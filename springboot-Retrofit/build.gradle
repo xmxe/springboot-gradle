@@ -1,25 +1,7 @@
-/*
- * buildScript块的repositories主要是为了Gradle脚本自身的执行，获取脚本依赖插件
- * 放在最上方
- */
-/*buildscript {
-	repositories {
-
-	}
-	dependencies {
-
-	}
-
-}*/
-plugins {
-	id 'org.springframework.boot' version '2.3.0.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
-}
 
 group = 'com.xmxe'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = javaVersion
 
 /*
  * 为当前项目提供仓库和依赖包
@@ -33,7 +15,6 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'com.github.lianjiatech:retrofit-spring-boot-starter:2.2.14'
 	compileOnly 'org.projectlombok:lombok:1.18.20'
@@ -41,11 +22,7 @@ dependencies {
 	implementation 'com.alibaba.csp:sentinel-core:1.7.1'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'
 }
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE"
-	}
-}
+
 test {
 	useJUnitPlatform()
 }

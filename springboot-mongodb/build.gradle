@@ -1,12 +1,8 @@
-plugins {
-	id 'org.springframework.boot' version '2.3.0.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
-}
+
 
 group = 'com.xmxe'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = javaVersion
 
 //apply作用：包含配置插件、引用其他配置文件 Tips：该配置项位置应放在除buildscript、plugins配置之外的所有配置项的前面，没有plugins则保证在buildscript之后
 //配置插件
@@ -23,7 +19,6 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
 }
