@@ -1,3 +1,18 @@
+### modules
+
+| module | description |
+| ----------------- | ------------------------------------------------------------ |
+|  [springboot-webflux](https://github.com/xmxe/springboot-gradle/tree/master/springboot-webflux)  | 测试webflux，连接数据库 |
+| [springboot-example](https://github.com/xmxe/springboot-gradle/tree/master/springboot-example) | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute |
+| [springboot-qrlogin](https://github.com/xmxe/springboot-gradle/tree/master/springboot-qrlogin) | springboot扫描二维码登录 |
+| [springboot-Retrofit](https://github.com/xmxe/springboot-gradle/tree/master/springboot-Retrofit) | 一款适用于 Spring Boot 的神级 HTTP 客户端框架 |
+| [springboot-jwt](https://github.com/xmxe/springboot-gradle/tree/master/springboot-jwt) | JWT ---JSON WEB TOKEN |
+|  | |
+|  | |
+
+
+---
+
 # 1.Gradle属性文件
 
 ## 1.1 gradle.properties
@@ -116,11 +131,3 @@ JCenter():就可以使用JCenJCenter上托管的开源项目；
 参考：[Gradle-Wrapper详解](https://blog.csdn.net/niuba123456/article/details/81074340)
 
 ------
-### modules
-
-| module | description |
-| ----------------- | ------------------------------------------------------------ |
-|  springboot-webflux  | 测试webflux，连接数据库 |
-| springboot-example | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute |
-| springboot-qrlogin | springboot扫描二维码登录 |
-
