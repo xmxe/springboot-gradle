@@ -3,7 +3,7 @@
 | module | description |
 | ----------------- | ------------------------------------------------------------ |
 |  [springboot-webflux](https://github.com/xmxe/springboot-gradle/tree/master/springboot-webflux)  | 测试webflux，连接数据库 |
-| [springboot-example](https://github.com/xmxe/springboot-gradle/tree/master/springboot-example) | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute |
+| [springboot-vpaim](https://github.com/xmxe/springboot-gradle/tree/master/springboot-vpaim) | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute |
 | [springboot-qrlogin](https://github.com/xmxe/springboot-gradle/tree/master/springboot-qrlogin) | springboot扫描二维码登录 |
 | [springboot-Retrofit](https://github.com/xmxe/springboot-gradle/tree/master/springboot-Retrofit) | 一款适用于 Spring Boot 的神级 HTTP 客户端框架 |
 | [springboot-jwt](https://github.com/xmxe/springboot-gradle/tree/master/springboot-jwt) | JWT ---JSON WEB TOKEN |

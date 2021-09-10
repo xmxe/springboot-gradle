@@ -32,7 +32,7 @@ public class User {
  *             <artifactId>validation-api</artifactId>
  *             <version>1.1.0.Final</version>
  *         </dependency>
- *         <!-- hibernate validator-->
+ *
  *         <dependency>
  *             <groupId>org.hibernate</groupId>
  *             <artifactId>hibernate-validator</artifactId>
