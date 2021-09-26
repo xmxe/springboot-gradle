@@ -4,11 +4,13 @@ import cn.hutool.extra.qrcode.QrCodeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.xmxe.component.WebSocketServer;
 import com.xmxe.entity.QrLoginToken;
+import com.xmxe.util.QRCodeWriteUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
 
@@ -136,5 +138,24 @@ public class QRLoginController {
 		String uuid = UUID.randomUUID().toString();
 		//去掉“-”符号
 		return uuid.replaceAll("-", "");
+	}
+
+
+	/**
+	 * 在线生成二维码的功能前端关键代码如下 <img src="http://ip:port/qrCode" alt="验证码,点击刷新！" onclick="this.src=this.src+'?temp='+Math.random();" class="content-code fl-r" />
+	 * 在线生成二维码 后台
+	 * @param response
+	 */
+	@GetMapping("qrCode")
+	public void getQRCode(HttpServletResponse response) {
+		String content = "Hello World";
+		try {
+			/**
+			 * 调用工具类生成二维码并输出到输出流中
+			 */
+			QRCodeWriteUtil.createCodeToOutputStream(content, response.getOutputStream());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
