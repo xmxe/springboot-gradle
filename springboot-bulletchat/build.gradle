@@ -1,0 +1,40 @@
+/*
+ * buildScript块的repositories主要是为了Gradle脚本自身的执行，获取脚本依赖插件
+ * 放在最上方
+ */
+/*buildscript {
+	repositories {
+
+	}
+	dependencies {
+
+	}
+
+}*/
+
+
+group = 'com.xmxe'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = javaVersion
+
+/*
+ * 为当前项目提供仓库和依赖包
+ */
+repositories {
+	mavenLocal()
+	maven {
+		url 'http://maven.aliyun.com/nexus/content/groups/public/'
+	}
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'io.netty:netty-all:4.1.49.Final'
+
+}
+
+test {
+	useJUnitPlatform()
+}
+
+

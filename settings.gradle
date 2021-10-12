@@ -23,7 +23,8 @@ rootProject.name = 'springboot-gradle'
 include ':springboot-webflux','springboot-mongodb',
         'springboot-vpaim','springboot-qrlogin',
         'springboot-jwt','springboot-interceptor',
-        'springboot-test','springboot-Retrofit'
+        'springboot-test','springboot-Retrofit',
+        'springboot-bulletchat'
 //平面布局的多项目构建settings.gradle文件
 //includeFlat 'project3', 'project4'
 
