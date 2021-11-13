@@ -7,7 +7,7 @@
 | [springboot-qrlogin](https://github.com/xmxe/springboot-gradle/tree/master/springboot-qrlogin) | springboot扫描二维码登录 |
 | [springboot-Retrofit](https://github.com/xmxe/springboot-gradle/tree/master/springboot-Retrofit) | 一款适用于 Spring Boot 的神级 HTTP 客户端框架 |
 | [springboot-jwt](https://github.com/xmxe/springboot-gradle/tree/master/springboot-jwt) | JWT ---JSON WEB TOKEN |
-|  | |
+| [springboot-bulletchat](https://github.com/xmxe/springboot-gradle/tree/master/springboot-bulletchat) | Netty视频弹幕实现 |
 |  | |
 
 
