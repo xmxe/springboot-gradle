@@ -8,7 +8,7 @@
 | [springboot-Retrofit](https://github.com/xmxe/springboot-gradle/tree/master/springboot-Retrofit) | 一款适用于 Spring Boot 的神级 HTTP 客户端框架 |
 | [springboot-jwt](https://github.com/xmxe/springboot-gradle/tree/master/springboot-jwt) | JWT ---JSON WEB TOKEN |
 | [springboot-bulletchat](https://github.com/xmxe/springboot-gradle/tree/master/springboot-bulletchat) | Netty视频弹幕实现 |
-|  | |
+| [springboot-interceptor](https://github.com/xmxe/springboot-gradle/tree/master/springboot-interceptor) | 使用拦截器获取Controller方法名、注解等相关信息 |
 
 
 ---
