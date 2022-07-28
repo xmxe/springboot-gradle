@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@MyOperation("test_clsss")//
+@MyOperation("test_clsss")
 public class InterceptorController {
 
 	@MyOperation("test_method")

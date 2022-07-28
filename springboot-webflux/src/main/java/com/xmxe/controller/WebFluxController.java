@@ -12,7 +12,6 @@ public class WebFluxController {
 
 	/**
 	 * 普通接口
-	 * @return
 	 */
 	@GetMapping("hello")
 	public String hello(){

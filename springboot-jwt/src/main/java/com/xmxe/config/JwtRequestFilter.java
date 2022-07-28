@@ -1,12 +1,7 @@
 package com.xmxe.config;
 
-import java.io.IOException;
-
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.xmxe.service.JwtUserDetailsService;
+import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,9 +10,11 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.xmxe.service.JwtUserDetailsService;
-
-import io.jsonwebtoken.ExpiredJwtException;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * javax.servlet.Filter原生接口，Spring的OncePerRequestFilter类实际上是一个实现了Filter接口的抽象类。
@@ -39,9 +36,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
 
-		/*
-		 * postman中设置请求头Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE2MjU2NjMyOTAsImlhdCI6MTYyNTY0NTI5MH0.Kd66eaEAFCWi6Mu4IK1etDmSYx_09QTEcR5IAid07XRgyMQMGb04z7xDtH86kdNMUQSpsce-F_SVZ4W7gyA5BQ
-		 */
+		//  postman中设置请求头Authorization:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE2MjU2NjMyOTAsImlhdCI6MTYyNTY0NTI5MH0.Kd66eaEAFCWi6Mu4IK1etDmSYx_09QTEcR5IAid07XRgyMQMGb04z7xDtH86kdNMUQSpsce-F_SVZ4W7gyA5BQ
+
 		// 获取请求头
 		final String requestTokenHeader = request.getHeader("Authorization");
 

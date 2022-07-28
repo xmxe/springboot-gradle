@@ -29,15 +29,19 @@ public class VpaimController {
 
 	private CustomCompoenet customCompoenet;
 
-	// 构造器注入保证依赖不可变（final关键字）,保证依赖不为空（省去了我们对其检查）,保证返回客户端（调用）的代码的时候是完全初始化的状态,
-	// 避免了循环依赖,提升了代码的可复用性,推荐使用构造器注入，因为类在加载时先加载构造方法后加载@Autowired
-	// 不使用构造器注入如果想在构造方法里使用bean的某个方法 会出现NPE异常,因为bean还没有被加载
+	/**
+	 * 构造器注入保证依赖不可变（final关键字）,保证依赖不为空（省去了我们对其检查）,保证返回客户端（调用）的代码的时候是完全初始化的状态,
+	 * 避免了循环依赖,提升了代码的可复用性,推荐使用构造器注入，因为类在加载时先加载构造方法后加载@Autowired
+	 * 不使用构造器注入如果想在构造方法里使用bean的某个方法 会出现NPE异常,因为bean还没有被加载
+	 */
 	@Autowired
 	public VpaimController(VpaimService vpaimService){
 		this.vpaimService = vpaimService;
 	}
 
-	// 方法注入
+	/**
+	 * 方法注入
+	 */
 	@Autowired
 	public void methodInjection(CustomCompoenet customCompoenet){
 		customCompoenet.setA(2);
@@ -115,13 +119,13 @@ public class VpaimController {
 
 	}
 
-	/*
-	 * @ModelAttribute注解用于将方法的参数或方法的返回值绑定到指定的模型属性上，并返回给Web视图
-	 * @ModelAttribute注解注释的方法会在此controller每个方法执行前被执行，因此对于一个controller映射多个URL的用法来说，要谨慎使用。
+	/**
+	 * .@ModelAttribute注解用于将方法的参数或方法的返回值绑定到指定的模型属性上，并返回给Web视图
+	 * .@ModelAttribute注解注释的方法会在此controller每个方法执行前被执行，因此对于一个controller映射多个URL的用法来说，要谨慎使用。
 	 */
 
-	/*
-	 * @RequestMapping和@ModelAndView同时标注在一个方法上
+	/**
+	 * .@RequestMapping和@ModelAndView同时标注在一个方法上
 	 * 这时这个方法的返回值并不是表示一个视图名称，而是model属性的值，视图名称由RequestToViewNameTranslator根据请求"/index"转换为逻辑视图index
 	 * Model属性名称由@ModelAttribute("attributeName")指定，相当于在request中封装了key=attributeName，value=index
 	 * ...
@@ -136,13 +140,13 @@ public class VpaimController {
 		return "index";
 	}
 
-	/*
-	 * @ModelAttribute注释void返回值的方法
+	/**
+	 * .@ModelAttribute注释void返回值的方法
 	 * 在请求/index后,method_void方法在index方法之前先被调用，它把请求参数（/index?a=abc）加入到一个名为attributeName的model属性中，
 	 * 在它执行后method_void被调用，返回视图名index和model已由@ModelAttribute方法生产好了。
 	 * 这个例子中model属性名称和model属性对象有model.addAttribute()实现，不过前提是要在方法中加入一个Model类型的参数。
 	 * 当URL或者post中不包含参数时，会报错，其实不需要这个方法，完全可以把请求的方法写成下面的样子，这样缺少此参数也不会出错：
-	 * @GetMapping(value = "/index")
+	 * .@GetMapping(value = "/index")
 	 * public ModelAndView index(String a) { return new ModelAndView("index");}
 	 */
 	@ModelAttribute
@@ -150,8 +154,8 @@ public class VpaimController {
 		model.addAttribute("a",a);
 	}
 
-	/*
-	 * @ModelAttribute注释有返回值的方法
+	/**
+	 * .@ModelAttribute注释有返回值的方法
 	 * 相当于model.addAttribute("messages",List<Map<String,String>>)
 	 */
 	@ModelAttribute("messages")
@@ -160,8 +164,8 @@ public class VpaimController {
 		return List.of(Map.of("k1","v1","k2","v2"));
 	}
 
-	/*
-	 * @ModelAttribute注释在参数上说明了该方法参数的值将由model中取得。如果model中找不到，那么该参数会先被实例化，然后被添加到model中。
+	/**
+	 * .@ModelAttribute注释在参数上说明了该方法参数的值将由model中取得。如果model中找不到，那么该参数会先被实例化，然后被添加到model中。
 	 * 在model中存在以后，请求中所有名称匹配的参数都会填充到该参数中。
 	 */
 	@ModelAttribute("userM")

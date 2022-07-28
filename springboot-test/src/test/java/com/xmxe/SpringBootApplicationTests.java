@@ -16,14 +16,19 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(classes = SpringBootApplicationTests.class)
 class SpringBootApplicationTests {
 
-//	assertTrue与assertFalse用来判断条件是否为true或false
+	/**
+	 * assertTrue与assertFalse用来判断条件是否为true或false
+	 */
 	@Test
 	@DisplayName("测试断言equals")
 	void testEquals() {
 		assertTrue(3 < 4);
 		assertFalse(3<4);
 	}
-//	assertNull与assertNotNull用来判断条件是否为·null
+
+	/**
+	 * assertNull与assertNotNull用来判断条件是否为·null
+	 */
 	@Test
 	@DisplayName("测试断言NotNull")
 	void testNotNull() {
@@ -31,7 +36,9 @@ class SpringBootApplicationTests {
 		assertNull(new Object());
 	}
 
-//	assertThrows用来判断执行抛出的异常是否符合预期，并可以使用异常类型接收返回值进行其他操作
+	/**
+	 * assertThrows用来判断执行抛出的异常是否符合预期，并可以使用异常类型接收返回值进行其他操作
+	 */
 	@Test
 	@DisplayName("测试断言抛异常")
 	void testThrows() {
@@ -41,7 +48,9 @@ class SpringBootApplicationTests {
 		assertEquals("/ by zero", arithExcep.getMessage());
 	}
 
-//	assertTimeout用来判断执行过程是否超时
+	/**
+	 * assertTimeout用来判断执行过程是否超时
+	 */
 	@Test
 	@DisplayName("测试断言超时")
 	void testTimeOut() {
@@ -52,7 +61,9 @@ class SpringBootApplicationTests {
 		System.out.println(actualResult);
 	}
 
-//	assertAll是组合断言，当它内部所有断言正确执行完才算通过
+	/**
+	 * assertAll是组合断言，当它内部所有断言正确执行完才算通过
+	 */
 	@Test
 	@DisplayName("测试组合断言")
 	void testAll() {
@@ -72,18 +83,22 @@ class SpringBootApplicationTests {
 		);
 	}
 
-//	重复性测试
-//	在许多场景中我们需要对同一个接口方法进行重复测试，例如对幂等性接口的测试。
-//	JUnit Jupiter通过使用@RepeatedTest(n)指定需要重复的次数
+	/**
+	 * 重复性测试
+	 * 在许多场景中我们需要对同一个接口方法进行重复测试，例如对幂等性接口的测试。
+	 * JUnit Jupiter通过使用@RepeatedTest(n)指定需要重复的次数
+	 */
 	@RepeatedTest(3)
 	@DisplayName("重复测试")
 	void repeatedTest() {
 		System.out.println("调用");
 	}
 
-//	参数化测试
-//	参数化测试可以按照多个参数分别运行多次单元测试这里有点类似于重复性测试，只不过每次运行传入的参数不用。
-//	需要使用到@ParameterizedTest，同时也需要@ValueSource提供一组数据，它支持八种基本类型以及String和自定义对象类型，使用极其方便。
+	/**
+	 * 参数化测试
+	 * 参数化测试可以按照多个参数分别运行多次单元测试这里有点类似于重复性测试，只不过每次运行传入的参数不用。
+	 * 需要使用到@ParameterizedTest，同时也需要@ValueSource提供一组数据，它支持八种基本类型以及String和自定义对象类型，使用极其方便。
+	 */
 	@ParameterizedTest
 	@ValueSource(ints = {1, 2, 3})
 	@DisplayName("参数化测试")
@@ -91,14 +106,13 @@ class SpringBootApplicationTests {
 		assertTrue(a > 0 && a < 4);
 	}
 
-
-
 }
 
-//内嵌测试
-// JUnit5提供了嵌套单元测试的功能，可以更好展示测试类之间的业务逻辑关系，我们通常是一个业务对应一个测试类，有业务关系的类其实可以写在一起。
-// 这样有利于进行测试。而且内联的写法可以大大减少不必要的类，精简项目，防止类爆炸等一系列问题。
-// Copy
+/**
+ * 内嵌测试
+ * JUnit5提供了嵌套单元测试的功能，可以更好展示测试类之间的业务逻辑关系，我们通常是一个业务对应一个测试类，有业务关系的类其实可以写在一起。
+ * 这样有利于进行测试。而且内联的写法可以大大减少不必要的类，精简项目，防止类爆炸等一系列问题。
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 @DisplayName("Junit5单元测试")

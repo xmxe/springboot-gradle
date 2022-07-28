@@ -8,9 +8,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 
 public enum  BulletChatServer {
-	/**
-	 * Server instance
-	 */
+	//  Server instance
 	SERVER;
 
 	private BulletChatServer(){
@@ -23,9 +21,8 @@ public enum  BulletChatServer {
 		ChannelFuture future = server.bind(9123);
 	}
 
-	public static void main(String[] args) {
-		BulletChatServer server = BulletChatServer.SERVER;
-
-	}
+	// public static void main(String[] args) {
+	// 	BulletChatServer server = BulletChatServer.SERVER;
+	// }
 
 }

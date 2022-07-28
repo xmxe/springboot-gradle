@@ -30,22 +30,30 @@ public class MongodbService {
 		this.mongodbDao = mongodbDao;
 	}
 
-	//查询所有
+	/**
+	 * 查询所有
+	 */
 	public List<Student> findAllStudent() {
 		return mongodbDao.findAll();
 	}
 
-	//添加
+	/**
+	 * 添加
+	 */
 	public void insert(Student student) {
 		mongodbDao.insert(student);
 	}
 
-	//删除
+	/**
+	 * 删除
+	 */
 	public void delete(Integer id) {
 		mongodbDao.deleteById(id);
 	}
 
-	//修改
+	/**
+	 * 修改
+	 */
 	public void update(Student student) {
 		mongodbDao.save(student);
 	}

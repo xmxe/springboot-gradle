@@ -144,15 +144,12 @@ public class QRLoginController {
 	/**
 	 * 在线生成二维码的功能前端关键代码如下 <img src="http://ip:port/qrCode" alt="验证码,点击刷新！" onclick="this.src=this.src+'?temp='+Math.random();" class="content-code fl-r" />
 	 * 在线生成二维码 后台
-	 * @param response
 	 */
 	@GetMapping("qrCode")
 	public void getQRCode(HttpServletResponse response) {
 		String content = "Hello World";
 		try {
-			/**
-			 * 调用工具类生成二维码并输出到输出流中
-			 */
+			// 调用工具类生成二维码并输出到输出流中
 			QRCodeWriteUtil.createCodeToOutputStream(content, response.getOutputStream());
 		} catch (IOException e) {
 			e.printStackTrace();

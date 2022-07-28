@@ -18,9 +18,6 @@ public class QRCodeReadUtil {
 
 	/**
 	 * 解析二维码内容(文件)
-	 * @param file
-	 * @return
-	 * @throws IOException
 	 */
 	public static String parseQRCodeByFile(File file) throws IOException {
 		BufferedImage bufferedImage = ImageIO.read(file);
@@ -29,9 +26,6 @@ public class QRCodeReadUtil {
 
 	/**
 	 * 解析二维码内容(网络链接)
-	 * @param url
-	 * @return
-	 * @throws IOException
 	 */
 	public static String parseQRCodeByUrl(URL url) throws IOException {
 		BufferedImage bufferedImage = ImageIO.read(url);
@@ -40,7 +34,7 @@ public class QRCodeReadUtil {
 
 	private static String parseQRCode(BufferedImage bufferedImage){
 		try {
-			/**
+			/*
 			 * com.google.zxing.client.j2se.BufferedImageLuminanceSource：缓冲图像亮度源
 			 * 将 java.awt.image.BufferedImage 转为 zxing 的 缓冲图像亮度源
 			 * 关键就是下面这几句：HybridBinarizer 用于读取二维码图像数据，BinaryBitmap 二进制位图
@@ -50,7 +44,7 @@ public class QRCodeReadUtil {
 			Map<DecodeHintType, Object> hints = new HashMap<>();
 			hints.put(DecodeHintType.CHARACTER_SET, "UTF-8");
 
-			/**
+			/*
 			 * 如果图片不是二维码图片，则 decode 抛异常：com.google.zxing.NotFoundException
 			 * MultiFormatWriter 的 encode 用于对内容进行编码成 2D 矩阵
 			 * MultiFormatReader 的 decode 用于读取二进制位图数据

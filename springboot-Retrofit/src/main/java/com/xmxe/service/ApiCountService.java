@@ -39,8 +39,6 @@ public interface ApiCountService {
 	/**
 	 * Call<T>
 	 * 不执行适配处理，直接返回Call<T>对象
-	 * @param id
-	 * @return
 	 */
 	@GET("person")
 	Call<Result> getPersonCall(@Query("id") Long id);
@@ -48,8 +46,6 @@ public interface ApiCountService {
 	/**
 	 *  CompletableFuture<T>
 	 *  将响应体内容适配成CompletableFuture<T>对象返回
-	 * @param id
-	 * @return
 	 */
 	@GET("person")
 	CompletableFuture<Result> getPersonCompletableFuture(@Query("id") Long id);
@@ -57,8 +53,6 @@ public interface ApiCountService {
 	/**
 	 * Void
 	 * 不关注返回类型可以使用Void。如果http状态码不是2xx，直接抛错！
-	 * @param id
-	 * @return
 	 */
 	@GET("person")
 	Void getPersonVoid(@Query("id") Long id);
@@ -66,8 +60,6 @@ public interface ApiCountService {
 	/**
 	 *  Response<T>
 	 *  将响应内容适配成Response<T>对象返回
-	 * @param id
-	 * @return
 	 */
 	@GET("person")
 	Response<Result> getPersonResponse(@Query("id") Long id);
@@ -75,8 +67,6 @@ public interface ApiCountService {
 	/**
 	 * 其他任意Java类型
 	 * 将响应体内容适配成一个对应的Java类型对象返回，如果http状态码不是2xx，直接抛错！
-	 * @param id
-	 * @return
 	 */
 	@GET("person")
 	Result getPerson(@Query("id") Long id);

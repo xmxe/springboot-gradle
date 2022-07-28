@@ -2,7 +2,7 @@
 
 ##### 常用命令
 
-```javascript
+```
 /*
    向数据库插入文档
    db.<collection>.insert() 向集合中插入一个或多个文档
@@ -26,7 +26,7 @@
  ObjectId()
 ```
 
-```javascript
+```
 /*
    db.collection.remove()
    删除一个或多个，可以第二个参数传递一个true，则只会删除一个 传递一个空对象作为参数，则会删除所有的
@@ -57,7 +57,7 @@ db.stus.updateOne({name:"ts"},{$set:{isDel:1}});
 db.stus.find({isDel:0})    
 ```
 
-```js
+```
 /*
    查询
     db.collection.find() find()用来查询集合中所有符合条件的文档
@@ -84,7 +84,7 @@ db.emp.find({}).sort({sal:1,empno:-1});
 db.emp.find({},{ename:1 , _id:0 , sal:1});
 ```
 
-```js
+```
 /*
    修改
    db.collection.update(查询条件,新对象)
@@ -140,7 +140,7 @@ db.emp.find({},{ename:1 , _id:0 , sal:1});
 		
 ```
 
-```javascript
+```
 - MongoDB的基本的指令
 	- 启动服务器
 		mongod --dbpath 路径 --port 端口号
@@ -202,7 +202,7 @@ db.emp.find({},{ename:1 , _id:0 , sal:1});
 			db.dropDatabase()
 ```
 
-```javascript
+```
 // 练习
 
 //1.进入my_test数据库
