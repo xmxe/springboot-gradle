@@ -15,15 +15,11 @@ import java.io.IOException;
  */
 @Component
 public class SignInterceptor extends BasePathMatchInterceptor {
-
 	private String accessKeyId;
-
 	private String accessKeySecret;
-
 	public void setAccessKeyId(String accessKeyId) {
 		this.accessKeyId = accessKeyId;
 	}
-
 	public void setAccessKeySecret(String accessKeySecret) {
 		this.accessKeySecret = accessKeySecret;
 	}

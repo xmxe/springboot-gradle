@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CustomInterceptor implements HandlerInterceptor {
-
 	Logger logger = LoggerFactory.getLogger(CustomInterceptor.class);
-
 	/**
 	 * 使用拦截器获取Controller方法名和注解信息
 	 */

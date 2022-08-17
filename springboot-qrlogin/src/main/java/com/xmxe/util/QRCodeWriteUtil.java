@@ -16,7 +16,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
  * 二维码、条形码工具类
  */
 public class QRCodeWriteUtil {

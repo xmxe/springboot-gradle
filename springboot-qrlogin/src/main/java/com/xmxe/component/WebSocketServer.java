@@ -13,7 +13,6 @@ import java.util.concurrent.CopyOnWriteArraySet;
 @ServerEndpoint("/websocket/{sid}")
 @Component
 public class WebSocketServer {
-
 	static Log log=LogFactory.get(WebSocketServer.class);
 
 	// 静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
