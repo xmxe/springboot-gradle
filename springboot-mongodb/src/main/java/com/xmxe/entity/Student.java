@@ -7,9 +7,7 @@ import java.io.Serializable;
 
 @Document(collation = "student")//mongodb里面的表
 public class Student implements Serializable {
-
 	private static final long serialVersionUID = 1L;
-
 	@Id
 	private Integer id;
 	private String name;

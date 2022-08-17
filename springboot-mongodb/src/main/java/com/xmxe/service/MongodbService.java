@@ -15,21 +15,16 @@ import java.util.List;
 
 @Service
 public class MongodbService {
-
 	private MongoTemplate mongoTemplate;
-
 	private MongodbDao mongodbDao;
-
 	@Autowired
 	public void setMongoTemplate(MongoTemplate mongoTemplate){
 		this.mongoTemplate = mongoTemplate;
 	}
-
 	@Autowired
 	public void setMongodbDao(MongodbDao mongodbDao){
 		this.mongodbDao = mongodbDao;
 	}
-
 	/**
 	 * 查询所有
 	 */

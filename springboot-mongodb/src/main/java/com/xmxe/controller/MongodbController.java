@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MongodbController {
 	@Autowired
 	MongodbUtil mongodbUtil;
-
 	@GetMapping("test")
 	public void test(){
 //		mongodbUtil.save(null);
