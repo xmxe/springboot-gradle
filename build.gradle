@@ -11,7 +11,7 @@ apply from: this.file('global.gradle')
 
 group = 'com.xmxe'
 version = '0.0.1-SNAPSHOT'
-description = 'learn gradle project'
+description = 'this is a gradle project'
 /*
  * buildscript{}块是为Gradle本身配置存储库和依赖项的地方 这意味着，这里不应该包含模块的依赖项。
  * buildscript中的声明是gradle脚本自身需要使用的资源
@@ -19,7 +19,7 @@ description = 'learn gradle project'
 buildscript {
     repositories {
         mavenLocal()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
         mavenCentral()
         jcenter()
     }
@@ -27,7 +27,7 @@ buildscript {
     // 这里的指的是gradle本身的依赖，并不是项目的依赖，例如想用gradle读取csv，那么就在这里引入gradle读csv的依赖库
     dependencies {//用来打包
         classpath 'org.apache.commons:commons-csv:1.8'
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.3.0.RELEASE'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.7.2'
     }
 }
 
@@ -56,7 +56,7 @@ allprojects {
 
     repositories {
         mavenLocal()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url 'https://maven.aliyun.com/repository/public'}
         mavenCentral()
     }
 
