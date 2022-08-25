@@ -81,8 +81,8 @@ subprojects {
     dependencies {
         implementation ('org.springframework.boot:spring-boot-starter-web') {exclude module: 'springboot-webflux'}
         implementation 'org.springframework.cloud:spring-cloud-starter'
-        compileOnly 'org.projectlombok:lombok:1.18.20'
-        annotationProcessor 'org.projectlombok:lombok:1.18.20'
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
     }
 
     dependencyManagement {

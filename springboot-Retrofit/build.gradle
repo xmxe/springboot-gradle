@@ -17,7 +17,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'com.github.lianjiatech:retrofit-spring-boot-starter:2.2.14'
-	compileOnly 'org.projectlombok:lombok:1.18.20'
+	compileOnly 'org.projectlombok:lombok'
 	// 熔断降级使用
 	implementation 'com.alibaba.csp:sentinel-core:1.7.1'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.2.0.RELEASE'
