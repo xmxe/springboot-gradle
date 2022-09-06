@@ -1,16 +1,16 @@
 ### modules
 
-| module | description |
-| ----------------- | ------------------------------------------------------------ |
-| [springboot-bulletchat](https://github.com/xmxe/springboot-gradle/tree/master/springboot-bulletchat) | Netty视频弹幕实现 |
-| [springboot-interceptor](https://github.com/xmxe/springboot-gradle/tree/master/springboot-interceptor) | 使用拦截器获取Controller方法名、注解等相关信息 |
-| [springboot-jwt](https://github.com/xmxe/springboot-gradle/tree/master/springboot-jwt) | JWT ---JSON WEB TOKEN |
-| [springboot-mongodb](https://github.com/xmxe/springboot-gradle/tree/master/springboot-mongodb) | 继承mongodb测试 |
-| [springboot-qrlogin](https://github.com/xmxe/springboot-gradle/tree/master/springboot-qrlogin) | springboot扫描二维码登录 |
-| [springboot-Retrofit](https://github.com/xmxe/springboot-gradle/tree/master/springboot-Retrofit) | 一款适用于 Spring Boot 的神级 HTTP 客户端框架 |
-| [springboot-test](https://github.com/xmxe/springboot-gradle/tree/master/springboot-test) | 测试 |
-| [springboot-vpaim](https://github.com/xmxe/springboot-gradle/tree/master/springboot-vpaim) | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute |
-| [springboot-webflux](https://github.com/xmxe/springboot-gradle/tree/master/springboot-webflux)  | 测试webflux，连接数据库 |
+| module | description                                                                                                                                                                                                                                                                    |
+| ----------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [springboot-bulletchat](https://github.com/xmxe/springboot-gradle/tree/master/springboot-bulletchat) | Netty视频弹幕实现                                                                                                                                                                                                                                                                    |
+| [springboot-interceptor](https://github.com/xmxe/springboot-gradle/tree/master/springboot-interceptor) | 使用拦截器获取Controller方法名、注解等相关信息                                                                                                                                                                                                                                                   |
+| [springboot-jwt](https://github.com/xmxe/springboot-gradle/tree/master/springboot-jwt) | JWT ---JSON WEB TOKEN                                                                                                                                                                                                                                                          |
+| [springboot-mongodb](https://github.com/xmxe/springboot-gradle/tree/master/springboot-mongodb) | 继承mongodb测试                                                                                                                                                                                                                                                                    |
+| [springboot-qrlogin](https://github.com/xmxe/springboot-gradle/tree/master/springboot-qrlogin) | [聊聊二维码扫码登录的原理](https://mp.weixin.qq.com/s/d-xV8RN18wXPPwhZqUZLew)                                                                                                                                                                                                              |
+| [springboot-Retrofit](https://github.com/xmxe/springboot-gradle/tree/master/springboot-Retrofit) | [一款适用于 Spring Boot 的神级 HTTP 客户端框架](https://mp.weixin.qq.com/s/kN3B1W6pNsTrxJJ0DLtbgQ)                                                                                                                                                                                          |
+| [springboot-test](https://github.com/xmxe/springboot-gradle/tree/master/springboot-test) | [Spring Boot 集成 JUnit5，更优雅单元测试！](https://mp.weixin.qq.com/s/cWUdtoKxlQ-20bKn09F3tw)                                                                                                                                                                                            |
+| [springboot-vpaim](https://github.com/xmxe/springboot-gradle/tree/master/springboot-vpaim) | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute <br />[这么写参数校验 (Validator) 就不会被劝退了](https://mp.weixin.qq.com/s/zm_jZuzAlc-JcqAQLTv7jQ)<br />[Spring Boot 实现各种参数校验，非常实用！](https://mp.weixin.qq.com/s/AfNNzLoIeu7YpQhRKlqNzg) |
+| [springboot-webflux](https://github.com/xmxe/springboot-gradle/tree/master/springboot-webflux)  | 测试webflux，连接数据库                                                                                                                                                                                                                                                                |
 
 
 ---

@@ -26,8 +26,7 @@ public class User {
 	}
 }
 /**
- * [真的！这么写参数校验 (Validator) 就不会被劝退了](https://mp.weixin.qq.com/s/zm_jZuzAlc-JcqAQLTv7jQ)
- * [Spring Boot 实现各种参数校验，非常实用！](https://mp.weixin.qq.com/s/AfNNzLoIeu7YpQhRKlqNzg)
+ *
  *     <dependency>
  *             <groupId>javax.validation</groupId>
  *             <artifactId>validation-api</artifactId>

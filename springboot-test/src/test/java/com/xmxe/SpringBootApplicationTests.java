@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static java.time.Duration.ofSeconds;
 import static org.junit.jupiter.api.Assertions.*;
 
-// Spring Boot 集成 JUnit5，更优雅单元测试！ https://mp.weixin.qq.com/s/cWUdtoKxlQ-20bKn09F3tw
+
 @SpringBootTest(classes = SpringBootApplicationTests.class)
 class SpringBootApplicationTests {
 
