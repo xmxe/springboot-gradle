@@ -10,6 +10,10 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 @Configuration
 public class RouterConfiguration {
+
+	/**
+	 * 响应式风格中不再使用@RequestMapping声明地址映射了，而是通过RouterFunctions.route()方法
+	 */
 	@Bean
 	RouterFunction<ServerResponse> userRouterFunction(UserHandler userHandler) {
 		return RouterFunctions.nest(RequestPredicates.path("/user"),

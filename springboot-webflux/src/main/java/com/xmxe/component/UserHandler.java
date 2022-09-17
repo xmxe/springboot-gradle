@@ -13,6 +13,9 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
+/**
+ * 在Handler中处理对应的HTTP请求，等同于MVC架构中的Service层
+ */
 @Component
 public class UserHandler {
 
