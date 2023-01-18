@@ -133,3 +133,5 @@ JCenter():就可以使用JCenJCenter上托管的开源项目；
 参考：[Gradle-Wrapper详解](https://blog.csdn.net/niuba123456/article/details/81074340)
 
 ------
+
+[使用Gradle构建多模块项目](https://mp.weixin.qq.com/s/pKbGiAesAd9hoq70w3kzvA)
