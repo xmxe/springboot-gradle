@@ -11,6 +11,7 @@
 | [springboot-test](https://github.com/xmxe/springboot-gradle/tree/master/springboot-test) | [Spring Boot集成JUnit5，更优雅单元测试！](https://mp.weixin.qq.com/s/cWUdtoKxlQ-20bKn09F3tw) <br /> [为什么要写单元测试？如何写单元测试？](https://mp.weixin.qq.com/s/aHQTuIQ90U7zXWuQyTaZiw) |
 | [springboot-vpaim](https://github.com/xmxe/springboot-gradle/tree/master/springboot-vpaim) | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute <br />[这么写参数校验(Validator)就不会被劝退了](https://mp.weixin.qq.com/s/zm_jZuzAlc-JcqAQLTv7jQ)<br />[Spring Boot实现各种参数校验，非常实用！](https://mp.weixin.qq.com/s/AfNNzLoIeu7YpQhRKlqNzg) |
 | [springboot-webflux](https://github.com/xmxe/springboot-gradle/tree/master/springboot-webflux)  | [用WebFlux写个CURD是什么体验？](https://mp.weixin.qq.com/s/Bdda3n-o4-IhZjJPg80nVg) |
+| [springboot-test](https://github.com/xmxe/springboot-gradle/tree/master/springboot-test) | [Spring Boot单元测试](https://mp.weixin.qq.com/s/_H_LjtgNU3rCAVw7YJxEEw) |
 
 
 ---

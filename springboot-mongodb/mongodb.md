@@ -458,6 +458,6 @@ db.stus.find()
 
 - [MongoDB常用操作命令大全](https://www.jb51.net/article/48217.htm)
 - [MongoDB最全攻略](https://mp.weixin.qq.com/s/F-NM-NkyZ0iGMF49wwbtbQ)
-- [SpringBoot整合MongoDB超详细](https://mp.weixin.qq.com/s/0FSYm7VwYQxjHchWXiivw)
+- [SpringBoot整合MongoDB实现数据的增删改查](https://mp.weixin.qq.com/s/txJUzT8x76ANUuDL-QK_FA)
 - [通过实例讲清楚MongoDB九种聚合操作](https://mp.weixin.qq.com/s/fC_Y3yHPKl1Qc_G8AeqagA)
 - [MongoDB，入门看这一篇足矣！](https://mp.weixin.qq.com/s/UKI9DIaNuPU6EtCACsQ_eQ)
