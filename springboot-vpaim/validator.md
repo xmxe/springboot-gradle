@@ -1,0 +1,6 @@
+- [这么写参数校验(Validator)就不会被劝退了](https://mp.weixin.qq.com/s/zm_jZuzAlc-JcqAQLTv7jQ)
+- [Spring Boot实现各种参数校验，非常实用！](https://mp.weixin.qq.com/s/AfNNzLoIeu7YpQhRKlqNzg)
+- [Spring Validation最佳实践及其实现原理，参数校验没那么简单！](https://mp.weixin.qq.com/s/jwJtTl5A_TL6jBmwlQNqCQ)
+- [别再乱用了，这才是@Validated和@Valid的真正区别！！！](https://mp.weixin.qq.com/s/xfdhLL-cJ20trstIaNSlrg)
+- [SpringBoot中使用@Valid注解+Exception全局处理器优雅处理参数验证](https://mp.weixin.qq.com/s/SMcx-meoE8qvgFC4T4R6sQ)
+- [Spring Boot还在用if校验参数？](https://mp.weixin.qq.com/s/3Arjscm_duW-9dWztzC2ew)
