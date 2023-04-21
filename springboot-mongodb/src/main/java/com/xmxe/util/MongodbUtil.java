@@ -16,7 +16,7 @@ public class MongodbUtil {
 	private static MongoTemplate mongoTemplate;
 
 	/**
-	 * 保存数据对象，集合为数据对象中@Document 注解所配置的collection
+	 * 保存数据对象，集合为数据对象中@Document注解所配置的collection
 	 * @param obj 数据对象
 	 */
 	public static void save(Object obj) {
@@ -34,7 +34,7 @@ public class MongodbUtil {
 	}
 
 	/**
-	 * 根据数据对象中的id删除数据，集合为数据对象中@Document 注解所配置的collection
+	 * 根据数据对象中的id删除数据，集合为数据对象中@Document注解所配置的collection
 	 * @param obj 数据对象
 	 */
 	public static void remove(Object obj) {
@@ -88,10 +88,10 @@ public class MongodbUtil {
 
 	/**
 	 * 指定集合 修改数据，且修改所找到的所有数据
-	 * @param accordingKey 修改条件 key
-	 * @param accordingValue 修改条件 value
-	 * @param updateKeys 修改内容 key数组
-	 * @param updateValues 修改内容 value数组
+	 * @param accordingKey 修改条件key
+	 * @param accordingValue 修改条件value
+	 * @param updateKeys 修改内容key数组
+	 * @param updateValues 修改内容value数组
 	 * @param collectionName 集合名
 	 */
 	public static void updateMulti(String accordingKey, Object accordingValue, String[] updateKeys, Object[] updateValues,
@@ -107,10 +107,10 @@ public class MongodbUtil {
 	}
 
 	/**
-	 * 根据条件查询出所有结果集 集合为数据对象中@Document 注解所配置的collection
+	 * 根据条件查询出所有结果集 集合为数据对象中@Document注解所配置的collection
 	 * @param obj 数据对象
-	 * @param findKeys 查询条件 key
-	 * @param findValues 查询条件 value
+	 * @param findKeys 查询条件key
+	 * @param findValues 查询条件value
 	 */
 	public static List<? extends Object> find(Object obj, String[] findKeys, Object[] findValues) {
 
@@ -130,8 +130,8 @@ public class MongodbUtil {
 	/**
 	 * 指定集合 根据条件查询出所有结果集
 	 * @param obj 数据对象
-	 * @param findKeys 查询条件 key
-	 * @param findValues 查询条件 value
+	 * @param findKeys 查询条件key
+	 * @param findValues 查询条件value
 	 * @param collectionName 集合名
 	 */
 	public static List<? extends Object> find(Object obj, String[] findKeys, Object[] findValues, String collectionName) {
@@ -152,8 +152,8 @@ public class MongodbUtil {
 	/**
 	 * 指定集合 根据条件查询出所有结果集 并排倒序
 	 * @param obj 数据对象
-	 * @param findKeys 查询条件 key
-	 * @param findValues 查询条件 value
+	 * @param findKeys 查询条件key
+	 * @param findValues 查询条件value
 	 * @param collectionName 集合名
 	 * @param sort 排序字段
 	 */
@@ -174,10 +174,10 @@ public class MongodbUtil {
 	}
 
 	/**
-	 * 根据条件查询出符合的第一条数据 集合为数据对象中 @Document 注解所配置的collection
+	 * 根据条件查询出符合的第一条数据 集合为数据对象中@Document注解所配置的collection
 	 * @param obj 数据对象
-	 * @param findKeys 查询条件 key
-	 * @param findValues 查询条件 value
+	 * @param findKeys 查询条件key
+	 * @param findValues 查询条件value
 	 */
 	public static Object findOne(Object obj, String[] findKeys, Object[] findValues) {
 
@@ -197,8 +197,8 @@ public class MongodbUtil {
 	/**
 	 * 指定集合 根据条件查询出符合的第一条数据
 	 * @param obj 数据对象
-	 * @param findKeys 查询条件 key
-	 * @param findValues 查询条件 value
+	 * @param findKeys 查询条件key
+	 * @param findValues 查询条件value
 	 * @param collectionName 集合名
 	 */
 	public static Object findOne(Object obj, String[] findKeys, Object[] findValues, String collectionName) {
@@ -217,7 +217,7 @@ public class MongodbUtil {
 	}
 
 	/**
-	 * 查询出所有结果集 集合为数据对象中 @Document 注解所配置的collection
+	 * 查询出所有结果集 集合为数据对象中@Document注解所配置的collection
 	 * @param obj 数据对象
 	 */
 	public static List<? extends Object> findAll(Object obj) {
@@ -227,7 +227,7 @@ public class MongodbUtil {
 	}
 
 	/**
-	 * 查询出所有结果集 集合为数据对象中 @Document 注解所配置的collection
+	 * 查询出所有结果集 集合为数据对象中@Document注解所配置的collection
 	 */
 	public static <T>  List<T> findAll(Class<T> clazz){
 		List<T> resultList = mongoTemplate.findAll(clazz);

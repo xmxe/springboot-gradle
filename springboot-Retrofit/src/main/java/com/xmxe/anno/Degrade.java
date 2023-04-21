@@ -6,8 +6,7 @@ import java.lang.annotation.*;
 
 /**
  * 配置降级规则（可选）
- * retrofit-spring-boot-starter支持注解式配置降级规则，通过@Degrade注解来配置降级规则
- * `@Degrade注解可以配置在接口或者方法上，配置在方法上的优先级更高。
+ * retrofit-spring-boot-starter支持注解式配置降级规则，通过@Degrade注解来配置降级规则,@Degrade注解可以配置在接口或者方法上，配置在方法上的优先级更高。
  * 如果应用项目已支持通过配置中心配置降级规则，可忽略注解式配置方式
  */
 @Retention(RetentionPolicy.RUNTIME)

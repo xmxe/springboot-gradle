@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  * 全局应用拦截器
- * 如果我们需要对整个系统的的http请求执行统一的拦截处理，可以自定义实现全局拦截器BaseGlobalInterceptor, 并配置成spring容器中的bean
+ * 如果我们需要对整个系统的的http请求执行统一的拦截处理，可以自定义实现全局拦截器BaseGlobalInterceptor,并配置成spring容器中的bean
  *
  */
 @Component

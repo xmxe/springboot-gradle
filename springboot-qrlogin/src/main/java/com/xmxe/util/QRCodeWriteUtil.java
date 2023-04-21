@@ -23,9 +23,9 @@ public class QRCodeWriteUtil {
 	/**
 	 * CODE_WIDTH：二维码宽度，单位像素
 	 * CODE_HEIGHT：二维码高度，单位像素
-	 * FRONT_COLOR：二维码前景色，0x000000 表示黑色
-	 * BACKGROUND_COLOR：二维码背景色，0xFFFFFF 表示白色
-	 * 演示用 16 进制表示，和前端页面 CSS 的取色是一样的，注意前后景颜色应该对比明显，如常见的黑白
+	 * FRONT_COLOR：二维码前景色，0x000000表示黑色
+	 * BACKGROUND_COLOR：二维码背景色，0xFFFFFF表示白色
+	 * 演示用16进制表示，和前端页面CSS的取色是一样的，注意前后景颜色应该对比明显，如常见的黑白
 	 */
 	private static final int CODE_WIDTH = 400;
 	private static final int CODE_HEIGHT = 400;
@@ -33,13 +33,13 @@ public class QRCodeWriteUtil {
 	private static final int BACKGROUND_COLOR = 0xFFFFFF;
 
 	/**
-	 * 生成二维码 并保存为图片
+	 * 生成二维码并保存为图片
 	 */
 	public static void createCodeToFile(String codeContent) {
 		try {
 			//获取系统目录
 			String filePathDir = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
-			//随机生成 png 格式图片
+			//随机生成png格式图片
 			String fileName = new Date().getTime() + ".png";
 
 			/*
@@ -47,7 +47,7 @@ public class QRCodeWriteUtil {
 			 * EncodeHintType.CHARACTER_SET：设置字符编码类型
 			 * EncodeHintType.ERROR_CORRECTION：设置误差校正
 			 * ErrorCorrectionLevel：误差校正等级，L = ~7% correction、M = ~15% correction、Q = ~25% correction、H = ~30% correction
-			 * 不设置时，默认为 L 等级，等级不一样，生成的图案不同，但扫描的结果是一样的
+			 * 不设置时，默认为L等级，等级不一样，生成的图案不同，但扫描的结果是一样的
 			 * EncodeHintType.MARGIN：设置二维码边距，单位像素，值越小，二维码距离四周越近
 			 * */
 			Map<EncodeHintType, Object> hints = new HashMap();
@@ -56,26 +56,26 @@ public class QRCodeWriteUtil {
 			hints.put(EncodeHintType.MARGIN, 1);
 
 			/*
-			 * MultiFormatWriter:多格式写入，这是一个工厂类，里面重载了两个 encode 方法，用于写入条形码或二维码
+			 * MultiFormatWriter:多格式写入，这是一个工厂类，里面重载了两个encode方法，用于写入条形码或二维码
 			 * encode(String contents,BarcodeFormat format,int width, int height,Map<EncodeHintType,?> hints)
 			 * contents:条形码/二维码内容
-			 * format：编码类型，如 条形码，二维码 等
+			 * format：编码类型，如条形码，二维码等
 			 * width：码的宽度
 			 * height：码的高度
 			 * hints：码内容的编码类型
-			 * BarcodeFormat：枚举该程序包已知的条形码格式，即创建何种码，如 1 维的条形码，2 维的二维码 等
+			 * BarcodeFormat：枚举该程序包已知的条形码格式，即创建何种码，如1维的条形码，2维的二维码等
 			 * BitMatrix：位(比特)矩阵或叫2D矩阵，也就是需要的二维码
 			 */
 			MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 			BitMatrix bitMatrix = multiFormatWriter.encode(codeContent, BarcodeFormat.QR_CODE, CODE_WIDTH, CODE_HEIGHT, hints);
 
 			/*
-			 * java.awt.image.BufferedImage：具有图像数据的可访问缓冲图像，实现了 RenderedImage 接口
-			 * BitMatrix 的 get(int x, int y) 获取比特矩阵内容，指定位置有值，则返回true，将其设置为前景色，否则设置为背景色
-			 * BufferedImage 的 setRGB(int x, int y, int rgb) 方法设置图像像素
+			 * java.awt.image.BufferedImage：具有图像数据的可访问缓冲图像，实现了RenderedImage接口
+			 * BitMatrix的get(int x, int y)获取比特矩阵内容，指定位置有值，则返回true，将其设置为前景色，否则设置为背景色
+			 * BufferedImage的setRGB(int x, int y, int rgb)方法设置图像像素
 			 * x：像素位置的横坐标，即列
 			 * y：像素位置的纵坐标，即行
-			 * rgb：像素的值，采用 16 进制,如 0xFFFFFF 白色
+			 * rgb：像素的值，采用16进制,如0xFFFFFF白色
 			 */
 			BufferedImage bufferedImage = new BufferedImage(CODE_WIDTH, CODE_HEIGHT, BufferedImage.TYPE_INT_BGR);
 			for (int x = 0; x < CODE_WIDTH; x++) {
@@ -85,7 +85,7 @@ public class QRCodeWriteUtil {
 			}
 
 			/*
-			 * javax.imageio.ImageIO java 扩展的图像IO
+			 * javax.imageio.ImageIO java扩展的图像IO
 			 * write(RenderedImage im,String formatName,File output)
 			 * im：待写入的图像
 			 * formatName：图像写入的格式
@@ -113,7 +113,7 @@ public class QRCodeWriteUtil {
 			 * EncodeHintType.CHARACTER_SET：设置字符编码类型
 			 * EncodeHintType.ERROR_CORRECTION：设置误差校正
 			 * ErrorCorrectionLevel：误差校正等级，L = ~7% correction、M = ~15% correction、Q = ~25% correction、H = ~30% correction
-			 * 不设置时，默认为 L 等级，等级不一样，生成的图案不同，但扫描的结果是一样的
+			 * 不设置时，默认为L等级，等级不一样，生成的图案不同，但扫描的结果是一样的
 			 * EncodeHintType.MARGIN：设置二维码边距，单位像素，值越小，二维码距离四周越近
 			 * */
 			Map<EncodeHintType, Object> hints = new HashMap();
@@ -122,26 +122,26 @@ public class QRCodeWriteUtil {
 			hints.put(EncodeHintType.MARGIN, 1);
 
 			/*
-			 * MultiFormatWriter:多格式写入，这是一个工厂类，里面重载了两个 encode 方法，用于写入条形码或二维码
+			 * MultiFormatWriter:多格式写入，这是一个工厂类，里面重载了两个encode方法，用于写入条形码或二维码
 			 * encode(String contents,BarcodeFormat format,int width, int height,Map<EncodeHintType,?> hints)
 			 * contents:条形码/二维码内容
-			 * format：编码类型，如 条形码，二维码 等
+			 * format：编码类型，如条形码，二维码等
 			 * width：码的宽度
 			 * height：码的高度
 			 * hints：码内容的编码类型
-			 * BarcodeFormat：枚举该程序包已知的条形码格式，即创建何种码，如 1 维的条形码，2 维的二维码 等
+			 * BarcodeFormat：枚举该程序包已知的条形码格式，即创建何种码，如1维的条形码,2维的二维码等
 			 * BitMatrix：位(比特)矩阵或叫2D矩阵，也就是需要的二维码
 			 */
 			MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 			BitMatrix bitMatrix = multiFormatWriter.encode(codeContent, BarcodeFormat.QR_CODE, CODE_WIDTH, CODE_HEIGHT, hints);
 
 			/*
-			 * java.awt.image.BufferedImage：具有图像数据的可访问缓冲图像，实现了 RenderedImage 接口
-			 * BitMatrix 的 get(int x, int y) 获取比特矩阵内容，指定位置有值，则返回true，将其设置为前景色，否则设置为背景色
-			 * BufferedImage 的 setRGB(int x, int y, int rgb) 方法设置图像像素
+			 * java.awt.image.BufferedImage：具有图像数据的可访问缓冲图像，实现了RenderedImage接口
+			 * BitMatrix的get(int x, int y)获取比特矩阵内容，指定位置有值，则返回true，将其设置为前景色，否则设置为背景色
+			 * BufferedImage的setRGB(int x, int y, int rgb)方法设置图像像素
 			 * x：像素位置的横坐标，即列
 			 * y：像素位置的纵坐标，即行
-			 * rgb：像素的值，采用 16 进制,如 0xFFFFFF 白色
+			 * rgb：像素的值，采用16进制,如0xFFFFFF白色
 			 */
 			BufferedImage bufferedImage = new BufferedImage(CODE_WIDTH, CODE_HEIGHT, BufferedImage.TYPE_INT_BGR);
 			for (int x = 0; x < CODE_WIDTH; x++) {

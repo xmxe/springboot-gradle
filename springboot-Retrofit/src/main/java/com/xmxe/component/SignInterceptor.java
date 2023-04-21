@@ -9,7 +9,6 @@ import java.io.IOException;
 
 /**
  * 配合使用@Sign注解
- *
  * accessKeyId和accessKeySecret字段值会依据@Sign注解的accessKeyId()和accessKeySecret()值自动注入，
  * 如果@Sign指定的是占位符形式的字符串，则会取配置属性值进行注入 。另外，accessKeyId和accessKeySecret字段必须提供setter方法
  */
@@ -25,7 +24,7 @@ public class SignInterceptor extends BasePathMatchInterceptor {
 	}
 
 	/**
-	 * 在请求头里面动态加入accessKeyId、accessKeySecret签名信息才能正常发起http请求 ，
+	 * 在请求头里面动态加入accessKeyId、accessKeySecret签名信息才能正常发起http请求
 	 */
 	@Override
 	public Response doIntercept(Chain chain) throws IOException {

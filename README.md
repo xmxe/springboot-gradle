@@ -9,7 +9,6 @@
 | [springboot-qrlogin](https://github.com/xmxe/springboot-gradle/tree/master/springboot-qrlogin) | [聊聊二维码扫码登录的原理](https://mp.weixin.qq.com/s/d-xV8RN18wXPPwhZqUZLew)  |
 | [springboot-Retrofit](https://github.com/xmxe/springboot-gradle/tree/master/springboot-Retrofit) | [一款适用于Spring Boot的神级HTTP客户端框架](https://mp.weixin.qq.com/s/kN3B1W6pNsTrxJJ0DLtbgQ)  |
 | [springboot-test](https://github.com/xmxe/springboot-gradle/tree/master/springboot-test) | [Spring Boot集成JUnit5，更优雅单元测试！](https://mp.weixin.qq.com/s/cWUdtoKxlQ-20bKn09F3tw) <br /> [为什么要写单元测试？如何写单元测试？](https://mp.weixin.qq.com/s/aHQTuIQ90U7zXWuQyTaZiw)<br />[Spring Boot单元测试](https://mp.weixin.qq.com/s/_H_LjtgNU3rCAVw7YJxEEw) |
-| [springboot-vpaim](https://github.com/xmxe/springboot-gradle/tree/master/springboot-vpaim) | 自定义校验器(Validator)、自定义属性编辑器(PropertyEditorSupport)、@Autowired三种注入方式、详细测试@InitBinder和@ModelAttribute |
 | [springboot-webflux](https://github.com/xmxe/springboot-gradle/tree/master/springboot-webflux)  | [用WebFlux写个CURD是什么体验？](https://mp.weixin.qq.com/s/Bdda3n-o4-IhZjJPg80nVg) |
 
 

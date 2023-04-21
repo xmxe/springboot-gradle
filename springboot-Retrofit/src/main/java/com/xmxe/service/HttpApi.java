@@ -41,8 +41,7 @@ public interface HttpApi {
 
 	/**
 	 * 请求重试
-	 * retrofit-spring-boot-starter支持请求重试功能，只需要在接口或者方法上加上@Retry注解即可。
-	 * .@Retry支持重试次数maxRetries、重试时间间隔intervalMs以及重试规则retryRules配置 。
+	 * retrofit-spring-boot-starter支持请求重试功能，只需要在接口或者方法上加上@Retry注解即可。@Retry支持重试次数maxRetries、重试时间间隔intervalMs以及重试规则retryRules配置。
 	 * 重试规则支持三种配置：
 	 * RESPONSE_STATUS_NOT_2XX：响应状态码不是2xx时执行重试；
 	 * OCCUR_IO_EXCEPTION：发生IO异常时执行重试；
@@ -56,7 +55,7 @@ public interface HttpApi {
 	/**
 	 * 自定义注入OkHttpClient
 	 * 通常情况下，通过@RetrofitClient注解属性动态创建OkHttpClient对象能够满足大部分使用场景。
-	 * 但是在某些情况下，用户可能需要自定义OkHttpClient，这个时候，可以在接口上定义返回类型是OkHttpClient.Builder的静态方法来实现。
+	 * 但是在某些情况下，用户可能需要自定义OkHttpClient，这个时候可以在接口上定义返回类型是OkHttpClient.Builder的静态方法来实现。
 	 * 方法必须使用@OkHttpClientBuilder注解标记！
 	 */
 	@OkHttpClientBuilder

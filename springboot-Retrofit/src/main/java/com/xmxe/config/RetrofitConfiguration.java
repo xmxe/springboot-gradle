@@ -8,8 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * 微服务之间的HTTP调用
- * 为了能够使用微服务调用，需要进行如下配置：
+ * 微服务之间的HTTP调用,为了能够使用微服务调用，需要进行如下配置：
  * 配置ServiceInstanceChooser为Spring容器Bean
  * 用户可以自行实现ServiceInstanceChooser接口，完成服务实例的选取逻辑，并将其配置成Spring容器的Bean。对于Spring Cloud应用，
  * retrofit-spring-boot-starter提供了SpringCloudServiceInstanceChooser实现，用户只需将其配置成Spring的Bean即可。

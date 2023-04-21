@@ -31,11 +31,11 @@ public class QRLoginController {
 		response.setContentType("image/jpeg");
 
 		try {
-			//这里没啥操作 就是生成一个UUID插入 数据库的表里
+			// 这里没啥操作 就是生成一个UUID插入数据库的表里
 //			String uuid = userService.createQrImg();
 			String uuid = getUUID();
 			response.setHeader("uuid", uuid);
-			// 这里是开源工具类 hutool里的QrCodeUtil 网址：http://hutool.mydoc.io/
+			// 这里是开源工具类hutool里的QrCodeUtil 网址：http://hutool.mydoc.io/
 			QrCodeUtil.generate(uuid, 300, 300, "jpg",response.getOutputStream());
 		} catch (Exception e) {
 			e.printStackTrace();

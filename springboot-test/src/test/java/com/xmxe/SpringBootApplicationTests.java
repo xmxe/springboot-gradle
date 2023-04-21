@@ -13,8 +13,8 @@ import static java.time.Duration.ofSeconds;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@SpringBootTest(classes = SpringBootApplicationTests.class)
-class SpringBootApplicationTests {
+@SpringBootTest(classes = AssertTests.class)
+class AssertTests {
 
 	/**
 	 * assertTrue与assertFalse用来判断条件是否为true或false

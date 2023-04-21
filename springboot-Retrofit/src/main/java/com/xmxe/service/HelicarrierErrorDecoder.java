@@ -9,10 +9,7 @@ import java.io.IOException;
 
 /**
  * 错误解码器。ErrorDecoder.
- * 当请求发生异常或者收到无效响应结果的时候，将HTTP相关信息解码到异常中，无效响应由业务自己判断
- *
- * 当请求发生异常或者收到无效响应结果的时候，将HTTP相关信息解码到异常中，无效响应由业务自己判断。 一般情况下，每个服务对应的无效响应各不相同，
- * 可以自定义对应的ErrorDecoder，然后配置在这里
+ * 当请求发生异常或者收到无效响应结果的时候，将HTTP相关信息解码到异常中，无效响应由业务自己判断。一般情况下，每个服务对应的无效响应各不相同，可以自定义对应的ErrorDecoder，然后配置在这里
  *
  */
 public class HelicarrierErrorDecoder implements ErrorDecoder {
@@ -58,4 +55,3 @@ public class HelicarrierErrorDecoder implements ErrorDecoder {
 		return RetrofitException.errorUnknown(request, cause);
 	}
 }
-
