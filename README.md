@@ -4,7 +4,6 @@
 | ----------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [springboot-bulletchat](https://github.com/xmxe/springboot-gradle/tree/master/springboot-bulletchat) | Netty视频弹幕实现   |
 | [springboot-interceptor](https://github.com/xmxe/springboot-gradle/tree/master/springboot-interceptor) | 使用拦截器获取Controller方法名、注解等相关信息 |
-| [springboot-jwt](https://github.com/xmxe/springboot-gradle/tree/master/springboot-jwt) | JWT ---JSON WEB TOKEN |
 | [springboot-mongodb](https://github.com/xmxe/springboot-gradle/tree/master/springboot-mongodb) | 继承mongodb测试  |
 | [springboot-qrlogin](https://github.com/xmxe/springboot-gradle/tree/master/springboot-qrlogin) | [聊聊二维码扫码登录的原理](https://mp.weixin.qq.com/s/d-xV8RN18wXPPwhZqUZLew)  |
 | [springboot-Retrofit](https://github.com/xmxe/springboot-gradle/tree/master/springboot-Retrofit) | [一款适用于Spring Boot的神级HTTP客户端框架](https://mp.weixin.qq.com/s/kN3B1W6pNsTrxJJ0DLtbgQ)  |
